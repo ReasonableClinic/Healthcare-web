@@ -1,0 +1,40 @@
+{
+ "built_at": "2026-11-08T10:52:05",
+ "patients": [
+  {
+   "patient_id": "SYN-0010",
+   "states": [
+    {
+     "state": "before",
+     "file": "SYN-0010.before.json",
+     "agent3": "agent3_a3-0.3.1/runs/dev_a031_v10_kit1412_p07",
+     "answers": []
+    },
+    {
+     "state": "after",
+     "file": "SYN-0010.after.json",
+     "agent3": "산학협력프로젝트/runs/loop_SYN-0010_anthropic/a3_rejudge",
+     "answers": [
+      {
+       "card_id": "SYN-0010:lab_check:L-NCT05428488-E09",
+       "date": "2026-09-20",
+       "doc_type": "lab_result",
+       "text": "Illustrative answer for the loop demo only. QuantiFERON-TB Gold Plus (IGRA): negative. Collected 2026-09-20."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "patient_id": "SYN-0017",
+   "states": [
+    {
+     "state": "before",
+     "file": "SYN-0017.before.json",
+     "agent3": "agent3_a3-0.3.1/runs/dev_a031_v10_kit1412_p07",
+     "answers": []
+    }
+   ]
+  }
+ ]
+}

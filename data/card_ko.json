@@ -1,0 +1,32 @@
+{
+  "source": "에이전트 5 카드 items[].missing_fact(영어)를 환자 화면용 한국어 문장으로 옮긴 파일 (Claude 번역, 2026-11-08, 검수 전). missing_fact가 비어 있는 항목은 기준 원문(criterion_text)을 보고 옮김(from: criterion). 키는 기준 ID라 2차 판정 뒤 카드 번호가 바뀌어도 그대로 쓴다. 행정 기준과 의료진용 카드(clinician_confirmation)는 화면에 질문으로 나오지 않아 넣지 않음.",
+  "form": "ask = 환자가 예/아니오로 답하는 질문, check = 의료진이 확인할 항목(명사형)",
+  "items": {
+    "NCT05428488-E20": { "form": "ask", "from": "missing_fact", "en": ["Any planned surgical procedure", "Whether any surgery is planned"], "ko": "예정된 수술이 있나요?" },
+    "NCT02714634-E08": { "form": "ask", "from": "missing_fact", "en": ["Breastfeeding status"], "ko": "지금 모유 수유 중인가요?" },
+    "NCT05428488-E24": { "form": "ask", "from": "missing_fact", "en": ["Live vaccine in the past 30 days", "Whether a live vaccine was given in the last 30 days"], "ko": "최근 30일 안에 생백신을 맞은 적이 있나요?" },
+    "NCT05428488-E17": { "form": "ask", "from": "missing_fact", "en": ["Participation in another interventional trial or investigational product in last 4 weeks", "Whether the patient is in another trial or received an investigational product within 4 weeks"], "ko": "최근 4주 안에 다른 임상시험에 참여했거나 시험약을 받은 적이 있나요?" },
+    "NCT02714634-E10": { "form": "ask", "from": "missing_fact", "en": ["Participation in any investigational product study within the last 4 weeks", "Whether the patient took part in an investigational-product study in the last 4 weeks"], "ko": "최근 4주 안에 시험약을 쓰는 임상시험에 참여한 적이 있나요?" },
+
+    "NCT05428488-I05": { "form": "check", "from": "criterion", "en": [], "ko": "메토트렉세이트나 레플루노미드 복용 중 잰 질환 활동 점수(DAS28-CRP, 기준 시점 7일 안의 CRP로 계산)" },
+    "NCT05428488-E09": { "form": "check", "from": "missing_fact", "en": ["QuantiFERON-TB result"], "ko": "결핵 검사(QuantiFERON-TB) 결과" },
+    "NCT02714634-E09": { "form": "check", "from": "criterion", "en": [], "ko": "약물 중독이나 알코올 중독이 있는지" },
+    "NCT03424005-I10": { "form": "check", "from": "missing_fact", "en": ["Hematology and chemistry results within 14 days before study treatment"], "ko": "치료 시작 전 14일 안에 받은 혈액 검사와 생화학 검사 결과" },
+    "NCT03424005-I08": { "form": "check", "from": "missing_fact", "en": ["Biopsy accessibility of the liver lesions or availability of archival tissue"], "ko": "간 병변 조직 검사가 가능한지, 또는 보관된 조직이 있는지" },
+    "NCT03424005-I09": { "form": "check", "from": "missing_fact", "en": ["Whether a representative tumor specimen is available for central biomarker testing"], "ko": "중앙 바이오마커 검사에 보낼 수 있는 종양 조직이 있는지" },
+    "NCT06982521-E08": { "form": "check", "from": "missing_fact", "en": ["AKT mutation and PTEN mutation/expression status"], "ko": "AKT 변이와 PTEN 변이·발현 검사 결과" },
+    "NCT03424005-E17": { "form": "check", "from": "missing_fact", "en": ["Any prior allogeneic stem cell or solid organ transplant"], "ko": "이전에 동종 조혈모세포 이식이나 장기 이식을 받은 적이 있는지" },
+    "NCT06982521-E01": { "form": "check", "from": "missing_fact", "en": ["Confirmation that no prior CDK2, PI3K/AKT/mTOR inhibitor, immunotherapy or ADC was received"], "ko": "이전에 CDK2 억제제, PI3K/AKT/mTOR 억제제, 면역항암제, 항체약물접합체(ADC)를 받은 적이 없는지" },
+    "NCT03424005-E01": { "form": "check", "from": "missing_fact", "en": ["Explicit statement of no prior checkpoint inhibitor, CD40 agonist or IL-2 therapy"], "ko": "이전에 면역관문억제제, CD40 작용제, IL-2 치료를 받은 적이 없다는 기록" },
+    "NCT03424005-E06": { "form": "check", "from": "criterion", "en": [], "ko": "치료 시작 전 28일 안에 시험 치료를 받았는지" },
+    "NCT03424005-E03": { "form": "check", "from": "criterion", "en": [], "ko": "치료 시작 전 2주 안에 전신 면역억제제를 썼는지, 연구 중에 쓸 예정이 있는지" },
+    "NCT03424005-E15": { "form": "check", "from": "criterion", "en": [], "ko": "치료 시작 전 2주 안에 먹는 항생제나 주사 항생제로 치료받았는지" },
+    "NCT03424005-E14": { "form": "check", "from": "missing_fact", "en": ["Whether any severe infection occurred in the last 4 weeks"], "ko": "최근 4주 안에 심한 감염이 있었는지" },
+    "NCT06982521-E05": { "form": "check", "from": "missing_fact", "en": ["Brain imaging or an explicit statement of no CNS metastases"], "ko": "뇌 영상 검사 결과, 또는 뇌·척수(중추신경계) 전이가 없다는 기록" },
+    "NCT03424005-E09": { "form": "check", "from": "missing_fact", "en": ["Brain imaging or an explicit statement on CNS metastases"], "ko": "뇌 영상 검사 결과, 또는 뇌·척수(중추신경계) 전이에 대한 기록" },
+    "NCT03424005-E10": { "form": "check", "from": "missing_fact", "en": ["Explicit statement on leptomeningeal disease history"], "ko": "연수막 질환을 앓은 적이 있는지에 대한 기록" },
+    "NCT03424005-E12": { "form": "check", "from": "criterion", "en": [], "ko": "폐섬유증, 폐렴(약물·원인 불명 등) 병력, 또는 흉부 CT의 활동성 폐렴 소견" },
+    "NCT03424005-E07": { "form": "check", "from": "criterion", "en": [], "ko": "자주(한 달에 한 번 이상) 빼내야 하는 흉수, 심낭 삼출액, 복수가 있는지" },
+    "NCT03424005-E13": { "form": "check", "from": "missing_fact", "en": ["Whether the patient has or had active tuberculosis"], "ko": "활동성 결핵이 있거나 있었는지" }
+  }
+}

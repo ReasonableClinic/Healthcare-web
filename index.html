@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>임상시험 매칭 데모</title>
+<meta name="description" content="합성 환자 기록으로 임상시험 기준 판정과 근거 원문, 새 정보를 넣은 2차 판정 결과를 보여 주는 연구용 데모입니다.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta property="og:title" content="임상시험 매칭 데모">
+<meta property="og:description" content="합성 환자 기록으로 임상시험 기준 판정과 근거 원문, 새 정보를 넣은 2차 판정 결과를 보여 주는 연구용 데모입니다.">
+<meta name="theme-color" content="#f6faf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151c19" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/pretendard/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="demo-banner" aria-label="데모 안내"><p>합성 데이터로 만든 연구용 데모입니다. 미리 실행한 파이프라인 결과를 재생합니다.</p></aside>
+<header class="top">
+  <div class="top-left">
+    <h1 class="brand">임상시험 매칭</h1>
+    <label class="field">
+      <span class="visually-hidden">환자 선택</span>
+      <select id="patient-select" aria-label="환자 선택"></select>
+    </label>
+    <span id="patient-meta" class="meta"></span>
+  </div>
+  <div class="top-right">
+    <div id="view-toggle" class="switch" role="group" aria-label="화면 모드">
+      <span class="switch-thumb" aria-hidden="true"></span>
+      <button type="button" data-view="patient" class="on" aria-pressed="true">환자 모드</button>
+      <button type="button" data-view="clinician" aria-pressed="false">의료진 모드</button>
+    </div>
+  </div>
+</header>
+<nav id="state-toggle" class="steps" aria-label="판정 차수"></nav>
+<section id="update-summary" aria-label="2차 판정 결과"></section>
+<main class="layout">
+  <section id="main" aria-live="polite">
+    <p class="loading">데이터를 불러오는 중입니다.</p>
+  </section>
+  <aside id="panel" class="panel hidden" aria-label="근거">
+    <div class="panel-head">
+      <h2 id="panel-title">근거</h2>
+      <button type="button" id="panel-close" class="icon-btn" aria-label="근거 패널 닫기">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div id="panel-body" tabindex="0" aria-label="근거 내용"></div>
+  </aside>
+</main>
+<footer class="foot">
+  <p class="disclaimer">[면책 고지 문구: 팀 확정 후 그대로 삽입]</p>
+  <details class="sources">
+    <summary>데이터 출처</summary>
+    <p id="build-meta"></p>
+  </details>
+</footer>
+<noscript><p class="loading">이 데모는 자바스크립트를 켜야 데이터를 읽습니다.</p></noscript>
+<script src="app.js"></script>
+</body>
+</html>

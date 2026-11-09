@@ -1,0 +1,444 @@
+{
+ "built_at": "2026-11-08T10:52:05",
+ "run_id": "20261108-105200-e15919",
+ "seconds": 4.89,
+ "llm_calls": {
+  "this_build": 0,
+  "update_loop_run": {
+   "agent2": 1,
+   "agent3": 1,
+   "source": "loop a2_upd/usage.json, a3_rejudge/run_meta.json"
+  },
+  "note": "this build runs only Agent 6 (template sentences) and Agent 5 (rules); the answered state was made by the update loop, whose calls are counted separately"
+ },
+ "states": [
+  {
+   "patient_id": "SYN-0010",
+   "state": "before",
+   "source": "dev"
+  },
+  {
+   "patient_id": "SYN-0010",
+   "state": "after",
+   "source": "loop"
+  },
+  {
+   "patient_id": "SYN-0017",
+   "state": "before",
+   "source": "dev"
+  }
+ ],
+ "versions": {
+  "backend": "backend-0.1.1",
+  "agent2": {
+   "evidence": "evidence_dev_haiku_v14_12.jsonl",
+   "loop_update": {
+    "id_series": "haiku",
+    "id_prefix": "EV",
+    "agent2_version": "v14.15",
+    "producer": "update.py",
+    "provider": "anthropic",
+    "model": "claude-haiku-4-5-20251001",
+    "updated_from": "산학협력프로젝트/runs/loop_SYN-0010_anthropic/a2_old"
+   }
+  },
+  "agent3": {
+   "agent3_version": "a3-0.3.1",
+   "prompt_version": "p07",
+   "model": "claude-sonnet-5-5",
+   "llm": "replay"
+  },
+  "agent4": "not in the demo bundle (Agent 3 graph format is the screen format, 11/04 decision)",
+  "agent5": {
+   "a5u": "a5u-0.2.0",
+   "a5j": "a5j-0.3.1"
+  },
+  "agent6": "agent6_a6-0.4.14",
+  "briefing": "template sentences (no LLM)"
+ },
+ "inputs_sha256": {
+  "agent3_final/agent3_kit/evidence_dev_haiku_v14_12.jsonl": "8c16780d8e21f6c7385f6e57fe435b9b235f2794abeebea99896af600819100f",
+  "agent3_a3-0.3.1/runs/dev_a031_v10_kit1412_p07/agent3_out.jsonl": "5da6b3e353e74e8cdbd63450e15a6f36cd0b5d77e0d966533c7fc9afc0f7111c",
+  "산학협력프로젝트/runs/loop_SYN-0010_anthropic/a3_rejudge/agent3_out.jsonl": "c86f322228624260d6f94f2d0a33a60d8027d0df860946192b512d71f853d46b",
+  "산학협력프로젝트/runs/loop_SYN-0010_anthropic/a2_upd/evidence.jsonl": "a8bf2fe1d481db054429ba985226338504d622719b6f16fa375db1c61f856b43",
+  "산학협력프로젝트/runs/loop_SYN-0010_anthropic/answered.jsonl": "ce9bcb19524530b9a26f60a8e68195eb0be843279a8c9132323751b80b04d156",
+  "산학협력프로젝트/examples/answers_loop_SYN-0010.jsonl": "03e66d6b6faece55536905174b5b9146b9cecae4f4826c44a9b16e012f50868c",
+  "agent3_final/data/dev/reference/trials.jsonl": "d9a76189db7ac0f345ba0e00aa661d664d99b327e9bdb52a6ebd5c3e567ab6e1",
+  "agent3_final/data/dev/reference/criteria.jsonl": "dcd69c468d8eda72f537a7deec5e54586b7e0a2e30c61dde33e2b7d0e40ee1ad"
+ },
+ "stages": [
+  {
+   "stage": "Agent 6 rank",
+   "state": "SYN-0010.before",
+   "run_id": "20261108-105200-e15919",
+   "seconds": 0.14,
+   "llm_calls": 0,
+   "inputs": {
+    "backend/build/SYN-0010/before/agent3_out.jsonl": "1371c0bc87d502c6baeed0bda540f6cd1a718a9437bc49967af6504c22766d22",
+    "agent3_final/data/dev/reference/trials.jsonl": "d9a76189db7ac0f345ba0e00aa661d664d99b327e9bdb52a6ebd5c3e567ab6e1"
+   },
+   "outputs": {
+    "backend/build/SYN-0010/before/a6/ranking.jsonl": "edf764e1e9660f94a3df27fe4154f0b545fbfedaf6f53434c5e1a4500bec3c82"
+   }
+  },
+  {
+   "stage": "Agent 6 clinician briefing",
+   "state": "SYN-0010.before",
+   "run_id": "20261108-105200-e15919",
+   "seconds": 0.15,
+   "llm_calls": 0,
+   "inputs": {
+    "backend/build/SYN-0010/before/evidence_SYN-0010_haiku.jsonl": "5cb88b74b33db369e5f6c8ddcc0adc783b218e84d10814767c2c9c87a8446897",
+    "backend/build/SYN-0010/before/a6/ranking.jsonl": "edf764e1e9660f94a3df27fe4154f0b545fbfedaf6f53434c5e1a4500bec3c82",
+    "backend/build/SYN-0010/before/graph/SYN-0010.json": "7fc8a76c2b5fd0c45083e48b4b1cf42087998998f4e2c1744e453bf5385d4651"
+   },
+   "outputs": {
+    "backend/build/SYN-0010/before/a6/briefing/SYN-0010.clinician.json": "05aef1a1062953f3ae30a2f69c96caeb294d60c9973d23f3b6b2b7cbf7c27393",
+    "backend/build/SYN-0010/before/a6/briefing/SYN-0010.clinician.md": "cf251389adc154b44377e425c95ba04b2b29cc68116744921698d439a6336e1a"
+   }
+  },
+  {
+   "stage": "Agent 6 patient briefing",
+   "state": "SYN-0010.before",
+   "run_id": "20261108-105200-e15919",
+   "seconds": 0.17,
+   "llm_calls": 0,
+   "inputs": {
+    "backend/build/SYN-0010/before/evidence_SYN-0010_haiku.jsonl": "5cb88b74b33db369e5f6c8ddcc0adc783b218e84d10814767c2c9c87a8446897",
+    "backend/build/SYN-0010/before/a6/ranking.jsonl": "edf764e1e9660f94a3df27fe4154f0b545fbfedaf6f53434c5e1a4500bec3c82",
+    "backend/build/SYN-0010/before/graph/SYN-0010.json": "7fc8a76c2b5fd0c45083e48b4b1cf42087998998f4e2c1744e453bf5385d4651"
+   },
+   "outputs": {
+    "backend/build/SYN-0010/before/a6/briefing/SYN-0010.clinician.json": "05aef1a1062953f3ae30a2f69c96caeb294d60c9973d23f3b6b2b7cbf7c27393",
+    "backend/build/SYN-0010/before/a6/briefing/SYN-0010.clinician.md": "cf251389adc154b44377e425c95ba04b2b29cc68116744921698d439a6336e1a",
+    "backend/build/SYN-0010/before/a6/briefing/SYN-0010.patient.json": "a59a9835b0a00d705ace34f8432d1c9166b0677003b2aacd469ccb9d03ba25d8",
+    "backend/build/SYN-0010/before/a6/briefing/SYN-0010.patient.md": "d55d4720da592882387420e3f1e8117d2ecbed0df8d342b49c9237e708f13c03"
+   }
+  },
+  {
+   "stage": "Agent 6 check_grounding",
+   "state": "SYN-0010.before",
+   "run_id": "20261108-105200-e15919",
+   "seconds": 0.12,
+   "llm_calls": 0,
+   "inputs": {
+    "backend/build/SYN-0010/before/a6/briefing/SYN-0010.clinician.json": "05aef1a1062953f3ae30a2f69c96caeb294d60c9973d23f3b6b2b7cbf7c27393",
+    "backend/build/SYN-0010/before/a6/briefing/SYN-0010.clinician.md": "cf251389adc154b44377e425c95ba04b2b29cc68116744921698d439a6336e1a",
+    "backend/build/SYN-0010/before/a6/briefing/SYN-0010.patient.json": "a59a9835b0a00d705ace34f8432d1c9166b0677003b2aacd469ccb9d03ba25d8",
+    "backend/build/SYN-0010/before/a6/briefing/SYN-0010.patient.md": "d55d4720da592882387420e3f1e8117d2ecbed0df8d342b49c9237e708f13c03",
+    "backend/build/SYN-0010/before/evidence_SYN-0010_haiku.jsonl": "5cb88b74b33db369e5f6c8ddcc0adc783b218e84d10814767c2c9c87a8446897",
+    "backend/build/SYN-0010/before/graph/SYN-0010.json": "7fc8a76c2b5fd0c45083e48b4b1cf42087998998f4e2c1744e453bf5385d4651"
+   },
+   "outputs": {}
+  },
+  {
+   "stage": "Agent 6 check_content",
+   "state": "SYN-0010.before",
+   "run_id": "20261108-105200-e15919",
+   "seconds": 0.7,
+   "llm_calls": 0,
+   "inputs": {
+    "backend/build/SYN-0010/before/a6/briefing/SYN-0010.clinician.json": "05aef1a1062953f3ae30a2f69c96caeb294d60c9973d23f3b6b2b7cbf7c27393",
+    "backend/build/SYN-0010/before/a6/briefing/SYN-0010.clinician.md": "cf251389adc154b44377e425c95ba04b2b29cc68116744921698d439a6336e1a",
+    "backend/build/SYN-0010/before/a6/briefing/SYN-0010.patient.json": "a59a9835b0a00d705ace34f8432d1c9166b0677003b2aacd469ccb9d03ba25d8",
+    "backend/build/SYN-0010/before/a6/briefing/SYN-0010.patient.md": "d55d4720da592882387420e3f1e8117d2ecbed0df8d342b49c9237e708f13c03",
+    "backend/build/SYN-0010/before/a6/ranking.jsonl": "edf764e1e9660f94a3df27fe4154f0b545fbfedaf6f53434c5e1a4500bec3c82",
+    "backend/build/SYN-0010/before/evidence_SYN-0010_haiku.jsonl": "5cb88b74b33db369e5f6c8ddcc0adc783b218e84d10814767c2c9c87a8446897",
+    "backend/build/SYN-0010/before/graph/SYN-0010.json": "7fc8a76c2b5fd0c45083e48b4b1cf42087998998f4e2c1744e453bf5385d4651"
+   },
+   "outputs": {}
+  },
+  {
+   "stage": "Agent 5 a5u cards",
+   "state": "SYN-0010.before",
+   "run_id": "20261108-105200-e15919",
+   "seconds": 0.16,
+   "llm_calls": 0,
+   "inputs": {
+    "backend/build/SYN-0010/before/agent3_out.jsonl": "1371c0bc87d502c6baeed0bda540f6cd1a718a9437bc49967af6504c22766d22",
+    "backend/build/SYN-0010/before/patients.jsonl": "89585407bf4aeefb678aaf2d4ce0d21476f3015e9839bd7e4cf5fc4be6693179",
+    "agent3_final/data/dev/reference/criteria.jsonl": "dcd69c468d8eda72f537a7deec5e54586b7e0a2e30c61dde33e2b7d0e40ee1ad",
+    "backend/build/SYN-0010/before/evidence_SYN-0010_haiku.jsonl": "5cb88b74b33db369e5f6c8ddcc0adc783b218e84d10814767c2c9c87a8446897"
+   },
+   "outputs": {
+    "backend/build/SYN-0010/before/a5u/cards.jsonl": "8ac2e8cf1defd4b7e44e9f0942a094a00e6abf1d68acd9218a600e80d5a94665"
+   }
+  },
+  {
+   "stage": "Agent 5 a5j cards",
+   "state": "SYN-0010.before",
+   "run_id": "20261108-105200-e15919",
+   "seconds": 0.14,
+   "llm_calls": 0,
+   "inputs": {
+    "backend/build/SYN-0010/before/agent3_out.jsonl": "1371c0bc87d502c6baeed0bda540f6cd1a718a9437bc49967af6504c22766d22",
+    "backend/build/SYN-0010/before/patients.jsonl": "89585407bf4aeefb678aaf2d4ce0d21476f3015e9839bd7e4cf5fc4be6693179",
+    "agent3_final/data/dev/reference/criteria.jsonl": "dcd69c468d8eda72f537a7deec5e54586b7e0a2e30c61dde33e2b7d0e40ee1ad",
+    "backend/build/SYN-0010/before/evidence_SYN-0010_haiku.jsonl": "5cb88b74b33db369e5f6c8ddcc0adc783b218e84d10814767c2c9c87a8446897"
+   },
+   "outputs": {
+    "backend/build/SYN-0010/before/a5j/cards.jsonl": "85c5d56f87370906c0206b31315e8278ef4995ca07111129b592b95ef8ba6fa2"
+   }
+  },
+  {
+   "stage": "Agent 6 rank",
+   "state": "SYN-0010.after",
+   "run_id": "20261108-105200-e15919",
+   "seconds": 0.13,
+   "llm_calls": 0,
+   "inputs": {
+    "backend/build/SYN-0010/after/agent3_out.jsonl": "c86f322228624260d6f94f2d0a33a60d8027d0df860946192b512d71f853d46b",
+    "agent3_final/data/dev/reference/trials.jsonl": "d9a76189db7ac0f345ba0e00aa661d664d99b327e9bdb52a6ebd5c3e567ab6e1"
+   },
+   "outputs": {
+    "backend/build/SYN-0010/after/a6/ranking.jsonl": "bd2c531bfb9d0d2dd3aaa3dfef665d47ba350cfc8718bd6503af1c29c5bf097c"
+   }
+  },
+  {
+   "stage": "Agent 6 clinician briefing",
+   "state": "SYN-0010.after",
+   "run_id": "20261108-105200-e15919",
+   "seconds": 0.16,
+   "llm_calls": 0,
+   "inputs": {
+    "backend/build/SYN-0010/after/evidence_SYN-0010_haiku_upd.jsonl": "a8bf2fe1d481db054429ba985226338504d622719b6f16fa375db1c61f856b43",
+    "backend/build/SYN-0010/after/a6/ranking.jsonl": "bd2c531bfb9d0d2dd3aaa3dfef665d47ba350cfc8718bd6503af1c29c5bf097c",
+    "backend/build/SYN-0010/after/graph/SYN-0010.json": "0ba1235a472037ba388782e35f57590cb49d1c6135abd19a1c895d9ac695695b"
+   },
+   "outputs": {
+    "backend/build/SYN-0010/after/a6/briefing/SYN-0010.clinician.json": "97d8fb540213821ca9d8a820751c1323e51422d8dc0e8ca2f884cf7e7c3c80ff",
+    "backend/build/SYN-0010/after/a6/briefing/SYN-0010.clinician.md": "c56dcf8081ec7fb471feacecbc1869af09feda6957dcaf9b65c4184c2d9410ba"
+   }
+  },
+  {
+   "stage": "Agent 6 patient briefing",
+   "state": "SYN-0010.after",
+   "run_id": "20261108-105200-e15919",
+   "seconds": 0.19,
+   "llm_calls": 0,
+   "inputs": {
+    "backend/build/SYN-0010/after/evidence_SYN-0010_haiku_upd.jsonl": "a8bf2fe1d481db054429ba985226338504d622719b6f16fa375db1c61f856b43",
+    "backend/build/SYN-0010/after/a6/ranking.jsonl": "bd2c531bfb9d0d2dd3aaa3dfef665d47ba350cfc8718bd6503af1c29c5bf097c",
+    "backend/build/SYN-0010/after/graph/SYN-0010.json": "0ba1235a472037ba388782e35f57590cb49d1c6135abd19a1c895d9ac695695b"
+   },
+   "outputs": {
+    "backend/build/SYN-0010/after/a6/briefing/SYN-0010.clinician.json": "97d8fb540213821ca9d8a820751c1323e51422d8dc0e8ca2f884cf7e7c3c80ff",
+    "backend/build/SYN-0010/after/a6/briefing/SYN-0010.clinician.md": "c56dcf8081ec7fb471feacecbc1869af09feda6957dcaf9b65c4184c2d9410ba",
+    "backend/build/SYN-0010/after/a6/briefing/SYN-0010.patient.json": "a5a5e4c01a2b6018455071ccc09e53dd52bb366d853c3b64fe324c00c78cea67",
+    "backend/build/SYN-0010/after/a6/briefing/SYN-0010.patient.md": "d55d4720da592882387420e3f1e8117d2ecbed0df8d342b49c9237e708f13c03"
+   }
+  },
+  {
+   "stage": "Agent 6 check_grounding",
+   "state": "SYN-0010.after",
+   "run_id": "20261108-105200-e15919",
+   "seconds": 0.14,
+   "llm_calls": 0,
+   "inputs": {
+    "backend/build/SYN-0010/after/a6/briefing/SYN-0010.clinician.json": "97d8fb540213821ca9d8a820751c1323e51422d8dc0e8ca2f884cf7e7c3c80ff",
+    "backend/build/SYN-0010/after/a6/briefing/SYN-0010.clinician.md": "c56dcf8081ec7fb471feacecbc1869af09feda6957dcaf9b65c4184c2d9410ba",
+    "backend/build/SYN-0010/after/a6/briefing/SYN-0010.patient.json": "a5a5e4c01a2b6018455071ccc09e53dd52bb366d853c3b64fe324c00c78cea67",
+    "backend/build/SYN-0010/after/a6/briefing/SYN-0010.patient.md": "d55d4720da592882387420e3f1e8117d2ecbed0df8d342b49c9237e708f13c03",
+    "backend/build/SYN-0010/after/evidence_SYN-0010_haiku_upd.jsonl": "a8bf2fe1d481db054429ba985226338504d622719b6f16fa375db1c61f856b43",
+    "backend/build/SYN-0010/after/graph/SYN-0010.json": "0ba1235a472037ba388782e35f57590cb49d1c6135abd19a1c895d9ac695695b"
+   },
+   "outputs": {}
+  },
+  {
+   "stage": "Agent 6 check_content",
+   "state": "SYN-0010.after",
+   "run_id": "20261108-105200-e15919",
+   "seconds": 0.66,
+   "llm_calls": 0,
+   "inputs": {
+    "backend/build/SYN-0010/after/a6/briefing/SYN-0010.clinician.json": "97d8fb540213821ca9d8a820751c1323e51422d8dc0e8ca2f884cf7e7c3c80ff",
+    "backend/build/SYN-0010/after/a6/briefing/SYN-0010.clinician.md": "c56dcf8081ec7fb471feacecbc1869af09feda6957dcaf9b65c4184c2d9410ba",
+    "backend/build/SYN-0010/after/a6/briefing/SYN-0010.patient.json": "a5a5e4c01a2b6018455071ccc09e53dd52bb366d853c3b64fe324c00c78cea67",
+    "backend/build/SYN-0010/after/a6/briefing/SYN-0010.patient.md": "d55d4720da592882387420e3f1e8117d2ecbed0df8d342b49c9237e708f13c03",
+    "backend/build/SYN-0010/after/a6/ranking.jsonl": "bd2c531bfb9d0d2dd3aaa3dfef665d47ba350cfc8718bd6503af1c29c5bf097c",
+    "backend/build/SYN-0010/after/evidence_SYN-0010_haiku_upd.jsonl": "a8bf2fe1d481db054429ba985226338504d622719b6f16fa375db1c61f856b43",
+    "backend/build/SYN-0010/after/graph/SYN-0010.json": "0ba1235a472037ba388782e35f57590cb49d1c6135abd19a1c895d9ac695695b"
+   },
+   "outputs": {}
+  },
+  {
+   "stage": "Agent 5 a5u cards",
+   "state": "SYN-0010.after",
+   "run_id": "20261108-105200-e15919",
+   "seconds": 0.16,
+   "llm_calls": 0,
+   "inputs": {
+    "backend/build/SYN-0010/after/agent3_out.jsonl": "c86f322228624260d6f94f2d0a33a60d8027d0df860946192b512d71f853d46b",
+    "backend/build/SYN-0010/after/patients.jsonl": "c7f036647ee759a0e07f55bd9ec474de024ef0b2c1542f754f81d503cbc0d43e",
+    "agent3_final/data/dev/reference/criteria.jsonl": "dcd69c468d8eda72f537a7deec5e54586b7e0a2e30c61dde33e2b7d0e40ee1ad",
+    "backend/build/SYN-0010/after/evidence_SYN-0010_haiku_upd.jsonl": "a8bf2fe1d481db054429ba985226338504d622719b6f16fa375db1c61f856b43"
+   },
+   "outputs": {
+    "backend/build/SYN-0010/after/a5u/cards.jsonl": "8ac2e8cf1defd4b7e44e9f0942a094a00e6abf1d68acd9218a600e80d5a94665"
+   }
+  },
+  {
+   "stage": "Agent 5 a5j cards",
+   "state": "SYN-0010.after",
+   "run_id": "20261108-105200-e15919",
+   "seconds": 0.13,
+   "llm_calls": 0,
+   "inputs": {
+    "backend/build/SYN-0010/after/agent3_out.jsonl": "c86f322228624260d6f94f2d0a33a60d8027d0df860946192b512d71f853d46b",
+    "backend/build/SYN-0010/after/patients.jsonl": "c7f036647ee759a0e07f55bd9ec474de024ef0b2c1542f754f81d503cbc0d43e",
+    "agent3_final/data/dev/reference/criteria.jsonl": "dcd69c468d8eda72f537a7deec5e54586b7e0a2e30c61dde33e2b7d0e40ee1ad",
+    "backend/build/SYN-0010/after/evidence_SYN-0010_haiku_upd.jsonl": "a8bf2fe1d481db054429ba985226338504d622719b6f16fa375db1c61f856b43",
+    "backend/build/SYN-0010/after/answered.jsonl": "ce9bcb19524530b9a26f60a8e68195eb0be843279a8c9132323751b80b04d156"
+   },
+   "outputs": {
+    "backend/build/SYN-0010/after/a5j/cards.jsonl": "d5cbca5d28f983b271d882d30e763c78e367913dacc222db6df92610440e2e3f"
+   }
+  },
+  {
+   "stage": "Agent 6 rank",
+   "state": "SYN-0017.before",
+   "run_id": "20261108-105200-e15919",
+   "seconds": 0.15,
+   "llm_calls": 0,
+   "inputs": {
+    "backend/build/SYN-0017/before/agent3_out.jsonl": "fd44b59fad534e538dcded252275b2696410a06516e55b26572be6f583823783",
+    "agent3_final/data/dev/reference/trials.jsonl": "d9a76189db7ac0f345ba0e00aa661d664d99b327e9bdb52a6ebd5c3e567ab6e1"
+   },
+   "outputs": {
+    "backend/build/SYN-0017/before/a6/ranking.jsonl": "7d641223e60780aab3e221b4fe60148a56583c4ed8d71c94878e6824aa13d1e6"
+   }
+  },
+  {
+   "stage": "Agent 6 clinician briefing",
+   "state": "SYN-0017.before",
+   "run_id": "20261108-105200-e15919",
+   "seconds": 0.16,
+   "llm_calls": 0,
+   "inputs": {
+    "backend/build/SYN-0017/before/evidence_SYN-0017_haiku.jsonl": "3b5346844b2d064bccfcb21d961c706dd28c2343f4e6213ac9229df9f38403f4",
+    "backend/build/SYN-0017/before/a6/ranking.jsonl": "7d641223e60780aab3e221b4fe60148a56583c4ed8d71c94878e6824aa13d1e6",
+    "backend/build/SYN-0017/before/graph/SYN-0017.json": "8c01c3186405449f571d66ae2f0c7222e89bb88158b15481611ead0a50035192"
+   },
+   "outputs": {
+    "backend/build/SYN-0017/before/a6/briefing/SYN-0017.clinician.json": "cd77f8b2f56ed245925a0fa7b8a7f3e081cbf7426758728c1b4acc118df01487",
+    "backend/build/SYN-0017/before/a6/briefing/SYN-0017.clinician.md": "9de0e94238d7c0cc37eedf4e45e4e1ed91b3bbe1102fb45c10c9ed0e4d4a269c"
+   }
+  },
+  {
+   "stage": "Agent 6 patient briefing",
+   "state": "SYN-0017.before",
+   "run_id": "20261108-105200-e15919",
+   "seconds": 0.22,
+   "llm_calls": 0,
+   "inputs": {
+    "backend/build/SYN-0017/before/evidence_SYN-0017_haiku.jsonl": "3b5346844b2d064bccfcb21d961c706dd28c2343f4e6213ac9229df9f38403f4",
+    "backend/build/SYN-0017/before/a6/ranking.jsonl": "7d641223e60780aab3e221b4fe60148a56583c4ed8d71c94878e6824aa13d1e6",
+    "backend/build/SYN-0017/before/graph/SYN-0017.json": "8c01c3186405449f571d66ae2f0c7222e89bb88158b15481611ead0a50035192"
+   },
+   "outputs": {
+    "backend/build/SYN-0017/before/a6/briefing/SYN-0017.clinician.json": "cd77f8b2f56ed245925a0fa7b8a7f3e081cbf7426758728c1b4acc118df01487",
+    "backend/build/SYN-0017/before/a6/briefing/SYN-0017.clinician.md": "9de0e94238d7c0cc37eedf4e45e4e1ed91b3bbe1102fb45c10c9ed0e4d4a269c",
+    "backend/build/SYN-0017/before/a6/briefing/SYN-0017.patient.json": "4e38da486c403b7a0317ea54c69d0116964d44c237dd04d08075d180eb87384c",
+    "backend/build/SYN-0017/before/a6/briefing/SYN-0017.patient.md": "76dde38ee29187ae40010cf221ed999c44bb3716e3db3bf6fc3895349afac3f3"
+   }
+  },
+  {
+   "stage": "Agent 6 check_grounding",
+   "state": "SYN-0017.before",
+   "run_id": "20261108-105200-e15919",
+   "seconds": 0.14,
+   "llm_calls": 0,
+   "inputs": {
+    "backend/build/SYN-0017/before/a6/briefing/SYN-0017.clinician.json": "cd77f8b2f56ed245925a0fa7b8a7f3e081cbf7426758728c1b4acc118df01487",
+    "backend/build/SYN-0017/before/a6/briefing/SYN-0017.clinician.md": "9de0e94238d7c0cc37eedf4e45e4e1ed91b3bbe1102fb45c10c9ed0e4d4a269c",
+    "backend/build/SYN-0017/before/a6/briefing/SYN-0017.patient.json": "4e38da486c403b7a0317ea54c69d0116964d44c237dd04d08075d180eb87384c",
+    "backend/build/SYN-0017/before/a6/briefing/SYN-0017.patient.md": "76dde38ee29187ae40010cf221ed999c44bb3716e3db3bf6fc3895349afac3f3",
+    "backend/build/SYN-0017/before/evidence_SYN-0017_haiku.jsonl": "3b5346844b2d064bccfcb21d961c706dd28c2343f4e6213ac9229df9f38403f4",
+    "backend/build/SYN-0017/before/graph/SYN-0017.json": "8c01c3186405449f571d66ae2f0c7222e89bb88158b15481611ead0a50035192"
+   },
+   "outputs": {}
+  },
+  {
+   "stage": "Agent 6 check_content",
+   "state": "SYN-0017.before",
+   "run_id": "20261108-105200-e15919",
+   "seconds": 0.6,
+   "llm_calls": 0,
+   "inputs": {
+    "backend/build/SYN-0017/before/a6/briefing/SYN-0017.clinician.json": "cd77f8b2f56ed245925a0fa7b8a7f3e081cbf7426758728c1b4acc118df01487",
+    "backend/build/SYN-0017/before/a6/briefing/SYN-0017.clinician.md": "9de0e94238d7c0cc37eedf4e45e4e1ed91b3bbe1102fb45c10c9ed0e4d4a269c",
+    "backend/build/SYN-0017/before/a6/briefing/SYN-0017.patient.json": "4e38da486c403b7a0317ea54c69d0116964d44c237dd04d08075d180eb87384c",
+    "backend/build/SYN-0017/before/a6/briefing/SYN-0017.patient.md": "76dde38ee29187ae40010cf221ed999c44bb3716e3db3bf6fc3895349afac3f3",
+    "backend/build/SYN-0017/before/a6/ranking.jsonl": "7d641223e60780aab3e221b4fe60148a56583c4ed8d71c94878e6824aa13d1e6",
+    "backend/build/SYN-0017/before/evidence_SYN-0017_haiku.jsonl": "3b5346844b2d064bccfcb21d961c706dd28c2343f4e6213ac9229df9f38403f4",
+    "backend/build/SYN-0017/before/graph/SYN-0017.json": "8c01c3186405449f571d66ae2f0c7222e89bb88158b15481611ead0a50035192"
+   },
+   "outputs": {}
+  },
+  {
+   "stage": "Agent 5 a5u cards",
+   "state": "SYN-0017.before",
+   "run_id": "20261108-105200-e15919",
+   "seconds": 0.14,
+   "llm_calls": 0,
+   "inputs": {
+    "backend/build/SYN-0017/before/agent3_out.jsonl": "fd44b59fad534e538dcded252275b2696410a06516e55b26572be6f583823783",
+    "backend/build/SYN-0017/before/patients.jsonl": "4c2f0bc3e046f75ee1f92da81d189a19fa2186ca39b7006961babe6f42459199",
+    "agent3_final/data/dev/reference/criteria.jsonl": "dcd69c468d8eda72f537a7deec5e54586b7e0a2e30c61dde33e2b7d0e40ee1ad",
+    "backend/build/SYN-0017/before/evidence_SYN-0017_haiku.jsonl": "3b5346844b2d064bccfcb21d961c706dd28c2343f4e6213ac9229df9f38403f4"
+   },
+   "outputs": {
+    "backend/build/SYN-0017/before/a5u/cards.jsonl": "3d6ce820215e654e08d6fa9983c9126b47951ef2dea71e2b9ba6dfcff682ba8c"
+   }
+  },
+  {
+   "stage": "Agent 5 a5j cards",
+   "state": "SYN-0017.before",
+   "run_id": "20261108-105200-e15919",
+   "seconds": 0.14,
+   "llm_calls": 0,
+   "inputs": {
+    "backend/build/SYN-0017/before/agent3_out.jsonl": "fd44b59fad534e538dcded252275b2696410a06516e55b26572be6f583823783",
+    "backend/build/SYN-0017/before/patients.jsonl": "4c2f0bc3e046f75ee1f92da81d189a19fa2186ca39b7006961babe6f42459199",
+    "agent3_final/data/dev/reference/criteria.jsonl": "dcd69c468d8eda72f537a7deec5e54586b7e0a2e30c61dde33e2b7d0e40ee1ad",
+    "backend/build/SYN-0017/before/evidence_SYN-0017_haiku.jsonl": "3b5346844b2d064bccfcb21d961c706dd28c2343f4e6213ac9229df9f38403f4"
+   },
+   "outputs": {
+    "backend/build/SYN-0017/before/a5j/cards.jsonl": "9bc547d777b52946731bb4ad1ba6cb684116eb81bcdbffe71e918026a5622476"
+   }
+  }
+ ],
+ "agent6_checks": {
+  "SYN-0010.before": {
+   "check_grounding": [
+    "2 briefings, 0 failing | sentences 182, unlinked 0, bad_refs 0, banned 0, missing_rules 0, trials_not_ranked 0"
+   ],
+   "check_content": [
+    "2 briefings, 0 failing | content number 0, date 0, quote 0, verdict 0, cancer 0, ev_uncited 0, english 0, flag_claim 0"
+   ]
+  },
+  "SYN-0010.after": {
+   "check_grounding": [
+    "2 briefings, 0 failing | sentences 181, unlinked 0, bad_refs 0, banned 0, missing_rules 0, trials_not_ranked 0"
+   ],
+   "check_content": [
+    "2 briefings, 0 failing | content number 0, date 0, quote 0, verdict 0, cancer 0, ev_uncited 0, english 0, flag_claim 0"
+   ]
+  },
+  "SYN-0017.before": {
+   "check_grounding": [
+    "2 briefings, 0 failing | sentences 150, unlinked 0, bad_refs 0, banned 0, missing_rules 0, trials_not_ranked 0"
+   ],
+   "check_content": [
+    "2 briefings, 0 failing | content number 0, date 0, quote 0, verdict 0, cancer 0, ev_uncited 0, english 0, flag_claim 0"
+   ]
+  }
+ },
+ "outputs_sha256": {
+  "SYN-0010.after.json": "2e6f5b61a76be38f0dcb068dc972cd12d23d1ec43286c51c042abe88ce636d20",
+  "SYN-0010.before.json": "13b28e7352cb774fb43de54a6f84c8f9c0fddec79dc9a1f4b2bc3d5c9389b683",
+  "SYN-0017.before.json": "ac108f27b18ea08327c46b4e95fd5dcf69c9e5ba018d6b660e659da3853fddde",
+  "index.json": "d47edb4e18c46951276eaa8f90d25ca9521b5e5f47d5dd5d1cb98cce2370ea25"
+ },
+ "note": "SYN-0010 after = update loop (answer -> Agent 2 Haiku -> Agent 3 re-judge of the answered criterion -> cards; answered criteria get no new patient question). Synthetic dev patients only."
+}
