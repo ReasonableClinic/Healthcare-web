@@ -696,6 +696,15 @@ function docsOfDec(m, dec) {
   }
   return out;
 }
+function demoTargets() {
+  const a = S.bundles.after, b0 = S.bundles.before, out = new Set();
+  if (!a || !b0) return out;
+  for (const ans of a.meta.answers || []) {
+    const c = b0.cards.find((x) => x.card_id === ans.card_id);
+    for (const it of (c && c.items) || []) out.add(it.criterion_id);
+  }
+  return out;
+}
 function mapModel(b, tid) {
   const m = model(b), lab = m.nodes.get("label:" + tid);
   const key = new Set((lab && lab.why || []).map(parseWhy).filter(Boolean));
@@ -706,7 +715,10 @@ function mapModel(b, tid) {
     const ds = dec ? docsOfDec(m, dec) : new Map();
     const item = { cr, cid, dec, si, docs: ds };
     let g;
-    if (key.has(cid)) g = "key";
+    // 시연에서 새 정보를 넣는 대상 기준(2차 판정 답 카드의 기준)은 1차·2차 모두 '아직 확인이 필요한 조건'에 둔다.
+    // 같은 자리에서 상태만 바뀌어야 '확인 필요 → 새 정보 → 바뀐 결과'로 읽힌다 (1차에서는 시험 판정 이유에 있어도)
+    if (demoTargets().has(cid)) g = "open";
+    else if (key.has(cid)) g = "key";
     else if (cr.administrative) g = "admin";
     else if (si.key === "fail") g = "fail";
     else if (si.key === "pass") g = "pass";
