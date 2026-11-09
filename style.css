@@ -423,6 +423,8 @@ table.crit tbody tr.changed .c-id::after { content: "바뀜"; display: inline-bl
 .sources summary:hover { text-decoration: underline; }
 .sources summary:focus-visible { outline: 2px solid var(--color-focus); }
 .sources .kv { margin-top: var(--space-xs); }
+.disclaimer-full ol { display: grid; gap: var(--space-xs); max-width: 72ch; margin: var(--space-xs) 0 0; padding-left: 1.4em; color: var(--color-ink-2); line-height: 1.6; }
+.disclaimer-full strong { font-weight: 600; color: var(--color-ink); }
 
 @media (min-width: 60rem) { .top { position: sticky; top: 0; } }
 @media (max-width: 60rem) { :root { --bar-h: 0px; } .steps-label { display: none; } #view-toggle.seg button { min-height: 48px; } }
